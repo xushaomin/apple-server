@@ -52,16 +52,16 @@ public final class B15Handler implements MessageHandler {
             byte nextByte = i == bufLen-1 ? 0 : req[i+1];
             
             // 检查协议分隔符 "["
-            if ((b == 0x78 && nextByte == 0x78)) {
-                beginIdx = i;
-                isReceiving = true;
-                sumLen =i+ 2 + 1 + req[i+2] + 2;
-            }else if(b == 0x79 && nextByte == 0x79){
-                beginIdx = i;
-                isReceiving = true;
-                byte[] tempBt = new byte[]{req[i+2],req[i+3]};
-                //sumLen =i+ 2 + 2 + Integer.parseInt(HexUtil.bin2hexstr(tempBt), 16) + 2;
-            }
+			if ((b == 0x78 && nextByte == 0x78)) {
+				beginIdx = i;
+				isReceiving = true;
+				sumLen = i + 2 + 1 + req[i + 2] + 2;
+			} else if (b == 0x79 && nextByte == 0x79) {
+				beginIdx = i;
+				isReceiving = true;
+				byte[] tempBt = new byte[] { req[i + 2], req[i + 3] };
+				sumLen = i + 2 + 2 + Integer.parseInt(HexUtil.bin2hexstr(tempBt), 16) + 2;
+			}
             
             if (!isReceiving) {
                 continue;
