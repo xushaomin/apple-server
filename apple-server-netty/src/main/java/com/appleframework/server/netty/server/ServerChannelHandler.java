@@ -65,7 +65,6 @@ public final class ServerChannelHandler extends ChannelInboundHandlerAdapter {
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         Packet packet = (Packet) msg;
         byte cmd = packet.cmd;
-
         try {
             Profiler.start("time cost on [channel read]: ", packet.toString());
             Connection connection = connectionManager.get(ctx.channel());

@@ -67,7 +67,6 @@ public final class PacketDecoder extends ByteToMessageDecoder {
 		in.readBytes(request);
 
         if (dataLen >= Packet.DATA_LEN) {
-
             Packet packet = decodeFrame(dataLen, request);
             if (packet != null) {
                 out.add(packet);

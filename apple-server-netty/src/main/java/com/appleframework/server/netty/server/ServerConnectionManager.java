@@ -147,7 +147,6 @@ public final class ServerConnectionManager implements ConnectionManager {
 
         void startTimeout() {
             Connection connection = this.connection;
-
             if (connection != null && connection.isConnected()) {
                 int timeout = connection.getSessionContext().heartbeat;
                 timer.newTimeout(this, timeout, TimeUnit.MILLISECONDS);

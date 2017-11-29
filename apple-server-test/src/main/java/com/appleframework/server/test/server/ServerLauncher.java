@@ -28,9 +28,8 @@ import com.appleframework.server.netty.protocol.Command;
 import com.appleframework.server.netty.server.AppleServer;
 import com.appleframework.server.spi.core.ServerEventListener;
 import com.appleframework.server.spi.core.ServerEventListenerFactory;
-import com.appleframework.server.test.handler.B13Handler;
-import com.appleframework.server.test.handler.B15Handler;
-import com.appleframework.server.test.handler.B18Handler;
+import com.appleframework.server.test.handler.by01578.BY01578Handler;
+import com.appleframework.server.test.handler.by01579.BY01579Handler;
 
 /**
  * Created by yxx on 2016/5/14.
@@ -48,9 +47,8 @@ public final class ServerLauncher {
         	
         	
         	appleServer = new AppleServer();
-        	appleServer.register(Command.B13, new B13Handler());
-        	appleServer.register(Command.B15, new B15Handler());
-        	appleServer.register(Command.B18, new B18Handler());
+        	appleServer.register(Command.BY01578, new BY01578Handler());
+        	appleServer.register(Command.BY01579, new BY01579Handler());
         	
         	//不需要服务端发起心跳检测
         	appleServer.setHeartbeatCheck(false);

@@ -50,7 +50,8 @@ public enum Command {
     ACK(23),
     NACK(24),
     UNKNOWN(-1),
-    B15(0x78),
+    BY01578(0x78),
+    BY01579(0x79),
     B13(0x2A),
     B18(0x7E);
 
